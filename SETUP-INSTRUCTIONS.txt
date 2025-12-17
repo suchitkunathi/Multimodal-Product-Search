@@ -1,0 +1,259 @@
+╔══════════════════════════════════════════════════════════════╗
+║        FINAL SETUP & RUN INSTRUCTIONS                       ║
+║     Multimodal Product Search Engine - Local Setup          ║
+╚══════════════════════════════════════════════════════════════╝
+
+📋 COMPLETE SETUP GUIDE
+═══════════════════════════════════════════════════════════════
+
+You now have 5 Python files:
+  1. 1-clip-encoder.py
+  2. 2-faiss-index.py
+  3. 3-main.py
+  4. 4-build-index.py
+  5. 5-requirements.txt
+
+STEP 1: RENAME FILES (Remove numbers)
+═══════════════════════════════════════════════════════════════
+
+Rename each file:
+  1-clip-encoder.py         →  clip_encoder.py
+  2-faiss-index.py          →  faiss_index.py
+  3-main.py                 →  main.py
+  4-build-index.py          →  build_index.py
+  5-requirements.txt        →  requirements.txt
+
+(Just remove the number and dash from the beginning)
+
+STEP 2: CREATE FOLDER STRUCTURE
+═══════════════════════════════════════════════════════════════
+
+Create this structure:
+
+C:\multimodal-search\
+  ├── clip_encoder.py
+  ├── faiss_index.py
+  ├── main.py
+  ├── build_index.py
+  ├── requirements.txt
+  ├── index.html              (Get from conversation earlier)
+  ├── data/                   (Create these folders)
+  │   ├── images/
+  │   └── index/
+  └── venv/                   (Will be created automatically)
+
+STEP 3: GET index.html
+═══════════════════════════════════════════════════════════════
+
+Scroll up in this conversation to find index.html
+Look for artifact #22 or the deployed web interface link
+Save it in your project folder as: index.html
+
+STEP 4: OPEN COMMAND PROMPT
+═══════════════════════════════════════════════════════════════
+
+1. Press: Windows Key + R
+2. Type: cmd
+3. Press: Enter
+4. Type: cd C:\multimodal-search
+5. Press: Enter
+
+STEP 5: CREATE VIRTUAL ENVIRONMENT
+═══════════════════════════════════════════════════════════════
+
+Type these commands one by one:
+
+python -m venv venv
+
+Press Enter and wait for it to complete.
+
+STEP 6: ACTIVATE VIRTUAL ENVIRONMENT
+═══════════════════════════════════════════════════════════════
+
+Type:
+
+venv\Scripts\activate
+
+Press Enter
+
+You should see: (venv) at the start of the line
+
+STEP 7: INSTALL DEPENDENCIES
+═══════════════════════════════════════════════════════════════
+
+Type:
+
+pip install -r requirements.txt
+
+Press Enter and wait (this takes 5-10 minutes)
+
+You'll see lots of downloading text - that's normal!
+
+STEP 8: BUILD THE INDEX
+═══════════════════════════════════════════════════════════════
+
+Type:
+
+python build_index.py
+
+Press Enter and wait
+
+You should see messages like:
+  - "📦 Creating sample dataset..."
+  - "🤖 Loading CLIP model..."
+  - "🔄 Generating embeddings..."
+  - "🔍 Building FAISS index..."
+  - "✅ Index Building Complete!"
+
+STEP 9: START THE API SERVER
+═══════════════════════════════════════════════════════════════
+
+Type:
+
+python main.py
+
+Press Enter
+
+You should see:
+  ============================================================
+  Starting Multimodal Product Search API
+  ============================================================
+  
+  1. Loading CLIP encoder...
+  Loading CLIP model 'ViT-B/32' on cpu...
+  ✓ CLIP model loaded successfully
+  
+  2. Loading product index...
+  ✓ Loaded index with 5 products
+  
+  ============================================================
+  ✓ API Ready!
+  ============================================================
+  Visit: http://localhost:8000/docs
+
+✅ DO NOT CLOSE THIS WINDOW! Keep it running!
+
+STEP 10: OPEN WEB INTERFACE
+═══════════════════════════════════════════════════════════════
+
+1. Open a NEW Command Prompt window (don't close the first one!)
+2. Navigate to your folder: cd C:\multimodal-search
+3. Double-click: index.html
+   OR
+   Type in browser: file:///C:/multimodal-search/index.html
+
+STEP 11: TEST IT!
+═══════════════════════════════════════════════════════════════
+
+You should see a search interface with 3 tabs:
+
+1️⃣  IMAGE SEARCH:
+   - Click "Image Search" tab
+   - Drag & drop any image
+   - Click "Search"
+   - See similar products!
+
+2️⃣  TEXT SEARCH:
+   - Click "Text Search" tab
+   - Type: "blue shirt" or "leather wallet"
+   - Click "Search"
+   - See matching products!
+
+3️⃣  HYBRID SEARCH:
+   - Click "Hybrid Search" tab
+   - Upload an image
+   - Type a description
+   - Adjust the slider
+   - Click "Search"
+
+═══════════════════════════════════════════════════════════════
+
+🎉 YOU'RE DONE! Your AI Search Engine is Running!
+
+═══════════════════════════════════════════════════════════════
+
+📱 DAILY USE (After First Setup):
+═══════════════════════════════════════════════════════════════
+
+1. Open Command Prompt
+2. cd C:\multimodal-search
+3. venv\Scripts\activate
+4. python main.py
+5. Double-click: index.html
+6. Search!
+
+═══════════════════════════════════════════════════════════════
+
+❌ TROUBLESHOOTING:
+═══════════════════════════════════════════════════════════════
+
+ERROR: "Python not found"
+SOLUTION: Install Python from python.org
+         Add to PATH during installation
+
+ERROR: "Module not found"
+SOLUTION: Make sure you ran: pip install -r requirements.txt
+
+ERROR: "Index not found"
+SOLUTION: Make sure you ran: python build_index.py
+
+ERROR: "API not responding"
+SOLUTION: Make sure main.py is still running in first window
+         Check: http://localhost:8000/
+
+ERROR: "Connection refused"
+SOLUTION: Make sure you completed STEP 9
+         API server must be running
+
+═══════════════════════════════════════════════════════════════
+
+✅ ALL FILES YOU DOWNLOADED:
+═══════════════════════════════════════════════════════════════
+
+✓ 1-clip-encoder.py       (Rename to: clip_encoder.py)
+✓ 2-faiss-index.py        (Rename to: faiss_index.py)
+✓ 3-main.py               (Rename to: main.py)
+✓ 4-build-index.py        (Rename to: build_index.py)
+✓ 5-requirements.txt      (Keep as: requirements.txt)
+✓ index.html              (From conversation earlier)
+✓ This file              (For reference)
+
+═══════════════════════════════════════════════════════════════
+
+🎓 WHAT YOUR PROJECT DOES:
+═══════════════════════════════════════════════════════════════
+
+✨ Uses AI to understand product images and descriptions
+✨ Searches through products using visual similarity
+✨ Finds products by text description
+✨ Combines image + text for hybrid search
+✨ Super fast (<100ms per search)
+✨ Works completely offline on your computer
+
+═══════════════════════════════════════════════════════════════
+
+📚 TECHNOLOGIES USED:
+═══════════════════════════════════════════════════════════════
+
+🔸 PyTorch       - AI framework
+🔸 CLIP          - AI model for images & text
+🔸 FAISS         - Fast search engine
+🔸 FastAPI       - Web server
+🔸 HTML/CSS/JS   - Web interface
+
+═══════════════════════════════════════════════════════════════
+
+🚀 READY TO START?
+═══════════════════════════════════════════════════════════════
+
+1. Rename your 5 Python files (remove numbers)
+2. Download index.html from conversation
+3. Follow STEP 1 through STEP 11 above
+4. Enjoy your AI search engine!
+
+═══════════════════════════════════════════════════════════════
+
+Questions? Check error messages in Command Prompt carefully.
+They usually tell you exactly what's wrong!
+
+Good luck! 🎉
