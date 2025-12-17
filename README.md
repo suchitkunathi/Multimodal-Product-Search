@@ -33,3 +33,11 @@ python main.py
 - Shopping cart & favorites
 - Price/category filters
 - Mobile responsive design
+
+## Team
+- Kaushik Reddy
+- Aryan Karthik
+- Saketh Boya
+- Rishi Raju
+- Rithvik Maragoni
+- Suchit Kunathi
